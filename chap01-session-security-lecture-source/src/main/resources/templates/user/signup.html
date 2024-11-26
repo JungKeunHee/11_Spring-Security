@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>회원가입 양식 폼</h1>
+    <form action="/user/signup" method="post">
+        아이디 : <input type="text" name="userId"><br>
+        이름 : <input type="text" name="userName"><br>
+        비밀번호 : <input type="password" name="userPass"><br>
+        권한 :
+        <select name="role">
+            <option value="USER">일반회원</option>
+            <option value="ADMIN">관리자</option>
+        </select><br>
+        <button>회원가입하기</button>
+    </form>
+</body>
+</html>

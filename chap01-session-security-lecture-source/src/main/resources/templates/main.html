@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
   <h1>Spring-Security-Session</h1>
+  <div sec:authorize="hasAnyAuthority('ADMIN')">
+      <p>ADMIN 권한을 가진 사람만 볼 수 있는 영역</p>
+  </div>
+  <div sec:authorize="hasAnyAuthority('USER')">
+      <p>USER 권한을 가진 사람만 볼 수 있는 영역</p>
+  </div>
   <div>
     <h1>로그인 기능</h1>
     <a href="/auth/login">로그인</a>
     <a href="/user/signup">회원가입</a>
   </div>
+  <hr>
+  <a href="/admin/page">관리자 전용 페이지 이동</a>
+  <a href="/user/page">일반 전용 페이지 이동</a>
+  <form action="/auth/logout" method="post">
+      <button>로그아웃</button>
+  </form>
 </body>
 </html>
